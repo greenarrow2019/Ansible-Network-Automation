@@ -1,0 +1,11 @@
+
+1. Introducing EVE-NG
+  UnetLAB, or the Unified Networking Lab, is a virtual lab for networking engineers who want to explore and learn networking concepts or test networking designs. It is a Web-based competitor to options such as GNS3 and Cisco VIRL. UNetLab can be seen as a hypervisor for images that typically run on physical network devices or internal separate virtual machines.
+  The great thing about UnetLab (and EVE-NG) is that everything is contained in a virtual machine, and users use a web interface to create and manage labs. 
+  EVE-NG (Emulated Virtual Environment - Next Generation) is the successor to UnetLab which contains more powerful features compared to UnetLab. EVE-NG is a graphical network emulator that supports both commercial and open-source router images. Its graphical user interface runs in a web browser. Users may create network nodes from a library of templates, connect them together, and configure them. 
+2. Installing EVE-NG
+  There are two ways to install EVE-NG on Vmware Workstation:
+    Download the EVE ova file and open it directly.
+    Download the iso file and set it up.
+  The ova and iso files can be found here: 
+  
