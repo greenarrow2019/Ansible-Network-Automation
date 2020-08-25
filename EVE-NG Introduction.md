@@ -58,9 +58,11 @@ For this project, I will install and configure EVE-NG on Vmware WorkStation usin
 <a name = '2.1'></a>
 ## 2.1. **Prepare**
 Required installation packages:
-    - The EVE-NG ova file
-    - The bundled Telnet, VNC, rpc packages for Windows environment can be downloaded [here](https://www.eve-ng.net/index.php/download/).
-    - Vmware Workstation.
+- The EVE-NG ova file
+    
+- The bundled Telnet, VNC, rpc packages for Windows environment can be downloaded [here](https://www.eve-ng.net/index.php/download/).
+    
+- Vmware Workstation.
     
 <a name = '2.2'></a>
 ## 2.2. **Installation and Configuration**
