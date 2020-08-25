@@ -61,6 +61,7 @@ After downloading the necessary software, open Vmware Workstation and do the fol
 # 3. **Complete the installation and access the user interface via a browser**
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/18.png)
+
 The default credential for the web interface:
 - Username: admin
 - Password: eve
@@ -68,6 +69,7 @@ The default credential for the web interface:
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/19.png)
 
 Install the Windows client-side package
+
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/20.png)
 
 # 4. **Configure Wireshark**
