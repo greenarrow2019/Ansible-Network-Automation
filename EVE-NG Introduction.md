@@ -1,21 +1,36 @@
 ### ***Index***
 
 [1. Introducing EVE-NG](#1)
+
 [2. Installing EVE-NG](#2)
 - [2.1. Prepare](#2.1)
+
 - [2.2. Installation and Configuration](#2.2)
+
     - [1. Open the EVE ova file](#2.2.1)
+    
     - [2. Browse to the directory containing the downloaded EVE ova file and _Open_ it](#2.2.2)
+    
 - [2.3. Make sure the storage path is correct and click _Import_](#2.3)
+
 - [2.4. After importing the virtual machine successfully, click _Edit virtual machine settings_ and edit as follow.](#2.4)
+
 - [2.5. When the VM is booted for the first time, the screen will ask users to log in with the username _root_ and the password _eve_.](#2.5)
+
 - [2.6. Enter a new password for user _root_](#2.6)
+
 - [2.7. Type the hostname](#2.7)
+
 - [2.8. Type the DNS domain name](#2.8)
+
 - [2.9. Set up an IP address for the VM](#2.9)
+
 - [2.10. Type a NTP server if used](#2.10)
+
 - [2.11. Choose direct connection](#2.11)
+
 [3. Complete the installation and access the user interface via a browser](#3)
+
 [4. Configure Wireshark](#4)
 
 ---
