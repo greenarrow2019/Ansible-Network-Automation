@@ -1,4 +1,4 @@
-### ***Index***
+### ***Table of contents***
 
 [1. Introducing EVE-NG](#1)
 
