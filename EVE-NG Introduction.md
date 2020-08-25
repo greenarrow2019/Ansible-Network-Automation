@@ -47,7 +47,9 @@ EVE-NG (Emulated Virtual Environment - Next Generation) is the successor to Unet
 <a name = '2'></a>
 # 2. **Installing EVE-NG**
 There are two ways to install EVE-NG on Vmware Workstation:
+
 - Download the EVE ova file and open it directly.
+
 - Download the iso file and set it up.
 
 The ova and iso files can be downloaded [here](https://www.eve-ng.net/index.php/download/).
