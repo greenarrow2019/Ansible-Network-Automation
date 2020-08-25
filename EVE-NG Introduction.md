@@ -25,16 +25,16 @@
     2.2. **Installation and Configuration**
     After downloading the necessary software, open Vmware Workstation and do the following steps:
         1. Open the EVE ova file 
-        
-        ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/1.png)
+     
+     ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/1.png)
         
         2. Browse to the directory containing the downloaded EVE ova file and _Open_ it
         
-        ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/2.png)
+     ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/2.png)
 
     2.3. Make sure the storage path is correct and click _Import_
     
-        ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/3.png)
+     ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/3.png)
 
     2.4. After importing the virtual machine successfully, click _Edit virtual machine settings_ and edit as follow. Two boxes in the virtualization engine section need to be checked.
     
