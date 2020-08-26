@@ -69,72 +69,72 @@ Required installation packages:
 After downloading the necessary software, open Vmware Workstation and do the following steps:
 <a name = '2.2.1'></a>
 #### 1. Open the EVE ova file 
-![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/1.png)
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/1.png)
 <a name = '2.2.2'></a>
 #### 2. Browse to the directory containing the downloaded EVE ova file and _Open_ it
-![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/2.png)
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/2.png)
 
 <a name = '2.3'></a>
 ## 2.3. Make sure the storage path is correct and click _Import_        
-![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/3.png)
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/3.png)
 
 <a name = '2.4'></a>
 ## 2.4. After importing the virtual machine successfully, click _Edit virtual machine settings_ and edit as follow. Two boxes in the virtualization engine section need to be checked.
     
-![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/4.png)
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/4.png)
 
 <a name = '2.5'></a>
 ## 2.5. When the VM is booted for the first time, the screen will ask users to log in with the username _root_ and the password _eve_. 
-![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/5.png)
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/5.png)
 
 <a name = '2.6'></a>
 ## 2.6. Enter a new password for user _root_   
-![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/6.png) 
-![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/7.png)
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/6.png) 
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/7.png)
 
 <a name = '2.7'></a>
 ## 2.7. Type the hostname
-![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/8.png)
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/8.png)
 
 <a name = '2.8'></a>
 ## 2.8. Type the DNS domain name 
-![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/9.png)
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/9.png)
 
 <a name = '2.9'></a>
 ## 2.9. Set up an IP address for the VM. For this project, I configure a static address for convenience.                     
-![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/10.png)          
-![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/11.png) 
-![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/12.png) 
-![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/13.png) 
-![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/14.png) 
-![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/15.png)
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/10.png)          
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/11.png) 
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/12.png) 
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/13.png) 
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/14.png) 
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/15.png)
 <a name = '2.10'></a>
 ## 2.10. Type a NTP server if used 
-![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/16.png)
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/16.png)
 <a name = '2.11'></a>
 ## 2.11. Choose direct connection 
-![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/17.png)
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/17.png)
 
 <a name = '3'></a>
 # 3. **Complete the installation and access the user interface via a browser**
 
-![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/18.png)
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/18.png)
 
 The default credential for the web interface:
 - Username: admin
 - Password: eve
 
-![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/19.png)
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/19.png)
 
 Install the Windows client-side package
 
-![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/20.png)
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/20.png)
 
 <a name = '4'></a>
 # 4. **Configure Wireshark**
 
 To use Wireshark to capture packets on devices in EVE-NG environment, I need to configure the _wireshark\_wrapper.bat_ file using notepad running as administrator and type the password in.
 
-![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/21.png)
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/21.png)
 
-![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/images/22.png)
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/22.png)
