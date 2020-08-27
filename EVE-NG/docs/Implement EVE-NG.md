@@ -1,18 +1,18 @@
 ### ***Table of contents***
 
-[1. Implement a simple Network](#1)
+[1. Implementing a simple Network](#1)
 
 [2. Configure the vIOS router](#2)
 
 ---
 
 <a name = '1'></a>
-## 1. Implement a simple network
+## 1. Implementing a simple network
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/47.png)
 
 <a name = '2'></a>
-## 2. Configure the vIOS router
+## 2. Configuring the vIOS router
 
 - Give each interface on the router an IP address.
 
