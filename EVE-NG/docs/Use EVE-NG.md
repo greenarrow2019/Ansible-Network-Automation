@@ -2,21 +2,21 @@
 
 [1. Supported Images](#1)
 
-[2. Explain some concepts](#2)
+[2. Explaining some concepts](#2)
 
 [3. Directories for images storage](#3)
 
-[4. Access EVE-NG](#4)
+[4. Accessing EVE-NG](#4)
 
-- [4.1. Install WinSCP](#4.1)
+- [4.1. Installing WinSCP](#4.1)
 
-- [4.2. Add Cisco IOU to EVE-NG](#4.2)
+- [4.2. Adding Cisco IOU to EVE-NG](#4.2)
 
-- [4.3. Add QEMU images](#4.3)
+- [4.3. Adding QEMU images](#4.3)
 
-- [4.4. Add Linux image pack to EVE-NG VM](#4.4)
+- [4.4. Adding Linux image pack to EVE-NG VM](#4.4)
 
-- [4.5. Add Cisco ASAv](#4.5)
+- [4.5. Adding Cisco ASAv](#4.5)
 
 ---
 
@@ -93,7 +93,7 @@ After installing WinSCP, open a connection the EVE-NG virtual machine.
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/35.png)
 
 <a name = '4.3'></a>
-#### 3.Add QEMU images
+#### 3.Adding QEMU images
 **Note**: The naiming of the images in qemu is a bit different from iol. The rules are listed [here](https://www.eve-ng.net/index.php/documentation/qemu-image-namings/)
 - Transferring the images for layer 2 switch and router to the correct folder.
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/36.png)
@@ -107,7 +107,7 @@ After installing WinSCP, open a connection the EVE-NG virtual machine.
 
 - The Cisco vIOS Router and Cisco vIOS switch lines are blue which mean they are ready for use.
 <a name = '4.4'></a>
-#### 4. Add Linux image pack to EVE-NG VM
+#### 4. Adding Linux image pack to EVE-NG VM
 EVE-NG lets users upload Linux images to the VM, and EVE-NG also provides ready to go and prepared Linux image pack on their [website](https://www.eve-ng.net/index.php/documentation/howtos/howto-create-own-linux-host-image/). For this project, I use the pre-install Linux images they provide.
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/39.png)
@@ -129,7 +129,7 @@ I can choose the Linux Image I like to use.
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/42.png)
 
 <a name = '4.5'></a>
-#### 5. Add Cisco ASAv
+#### 5. Adding Cisco ASAv
 - Upload the correct image to the correct folder in _/opt/unetlab/addons/qemu/_
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/43.png)
