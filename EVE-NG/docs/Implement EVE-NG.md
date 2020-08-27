@@ -20,7 +20,7 @@
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/51.png)
 
-- Confirm that all clien machines can ping the Internet
+- Confirm that all client machines can ping the Internet
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/52.png)
 
