@@ -3,7 +3,7 @@
 [1. Introducing EVE-NG](#1)
 
 [2. Installing EVE-NG](#2)
-- [2.1. Prepare](#2.1)
+- [2.1. Preparation](#2.1)
 
 - [2.2. Installation and Configuration](#2.2)
 
@@ -29,9 +29,9 @@
 
 - [2.11. Choose direct connection](#2.11)
 
-[3. Complete the installation and access the user interface via a browser](#3)
+[3. Completing the installation and access the user interface via a browser](#3)
 
-[4. Configure Wireshark](#4)
+[4. Configuring Wireshark](#4)
 
 ---
 
@@ -56,7 +56,7 @@ The ova and iso files can be downloaded [here](https://www.eve-ng.net/index.php/
 
 For this project, I will install and configure EVE-NG on Vmware WorkStation using the EVE ova file which contains the EVE-NG image that was pre-installed. If users want to install EVE-NG using the iso file, instruction can be found [here](https://www.youtube.com/watch?v=Kxt5dvuAfNk).
 <a name = '2.1'></a>
-## 2.1. **Prepare**
+## 2.1. **Preparation**
 Required installation packages:
 - The EVE-NG ova file
     
@@ -112,11 +112,11 @@ After downloading the necessary software, open Vmware Workstation and do the fol
 ## 2.10. Type a NTP server if used 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/16.png)
 <a name = '2.11'></a>
-## 2.11. Choose direct connection 
+## 2.11. Direct connection 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/17.png)
 
 <a name = '3'></a>
-# 3. **Complete the installation and access the user interface via a browser**
+# 3. **Completing the installation and access the user interface via a browser**
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/18.png)
 
@@ -131,7 +131,7 @@ Install the Windows client-side package
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/20.png)
 
 <a name = '4'></a>
-# 4. **Configure Wireshark**
+# 4. **Configuring Wireshark**
 
 To use Wireshark to capture packets on devices in EVE-NG environment, I need to configure the _wireshark\_wrapper.bat_ file using notepad running as administrator and type the password in.
 
