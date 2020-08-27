@@ -24,7 +24,7 @@
 ## 1. **Supported Images**
 EVE-NG does not provide images of network devices on their website. Users need to find images of the software simulating the devices in the network model that the EVE-NG supports. You can check out the current images supported by EVE-NG [here](https://www.eve-ng.net/index.php/documentation/supported-images/)
 <a name = '2'></a>
-## 2. **Explain some concepts**
+## 2. **Explaining some concepts**
 - **Dynamips** is an emulator computer program that was written to emulate Cisco routers. It can emulate the hardware of the Cisco series routing platforms by directly booting an actual Cisco IOS software image into the emulator.
 - **IOL** or **IOS on Linux** is a Cisco internal way of running IOS on Linux. The IOL images are used to create layer 2 devices (switches) or layer 3 devices (routers) which can help people to practice with the same features and functions that the original devices has. It is not CPU and memory resource intensive which makes it a good choice.
 - **qemu** is a an open-source emulator and virtualizer that can perform hardware virtualization. 
@@ -38,7 +38,7 @@ EVE-NG does not provide images of network devices on their website. Users need t
     - iol: this folder contains bin files simulating the IOS operating systems of Cisco network devices.
     - qemu: this folder contains the templates used to create virtual machines to emulate terminal devices such as computers, laptops, and phones.
 <a name = '4'></a>
-## 4. **Access EVE-NG**
+## 4. **Accessing EVE-NG**
 I use PUTTY to ssh to the EVE-NG virtual machine for a bigger screen. when I log in for the first time, I run _apt-get update && apt-get upgrade_ to update the list of available packages and install the latest versions of all the packages the VM has.
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/23.png)
@@ -46,7 +46,7 @@ I use PUTTY to ssh to the EVE-NG virtual machine for a bigger screen. when I log
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/24.png)
 
 <a name = '4.1'></a>
-#### 1. Install WinSCP
+#### 1. Installing WinSCP
 I use WinSCP to copy file between my local computer and the EVE-NG virtual machine.
 Click [here](https://winscp.net/eng/index.php) to download WinSCP.
 After installing WinSCP, open a connection the EVE-NG virtual machine.
@@ -54,7 +54,7 @@ After installing WinSCP, open a connection the EVE-NG virtual machine.
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/25.png)
 
 <a name = '4.2'></a>
-#### 2. Add Cisco IOU to EVE-NG
+#### 2. Adding Cisco IOU to EVE-NG
 **Note**: IOL images must end with the ".bin" extension and must be executable. License file must be stored under the same path.
 - Transferring the bin files from my local computer to the directory /opt/unetlab/addons/iol/bin on EVE-NG VM.
 
