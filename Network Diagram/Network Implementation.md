@@ -84,3 +84,13 @@ Because I set up two management routers for redundancy, when a client machine se
 First, I gave each HSRP group a name.
 
 Second, I used this command in the picture to let only the active router for that VLAN to forward the DHCP Discover messages to the DHCP server.
+
+## Routing Protocols
+* OSPF area 0: BackboneRT, ManagementRT1, and ManagementRT2.
+    * On BackboneRT, I used the command **ip route 0.0.0.0 0.0.0.0 G0/0** to to route all traffic to the Internet and added it to the routing table by using the command **default-information originate**.  
+* OSPF area 1: the link betweek BackboneRT and RedistributeRT.
+* EIGRP: RidistributeRT and EIGRP router.
+
+On RedistributeRT, to enable OSPF and EIGRP to work together, I used router redistribution so that EIGRP routes will appear as OSPF routes in OSPF routers' routing tables and vice versa. 
+**Note:** Router redistribution helps increase accessibility within networks.
+
