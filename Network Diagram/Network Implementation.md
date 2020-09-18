@@ -4,21 +4,22 @@ I built a network diagram and configured every node manually before using Ansibl
 
 For every router and switch, I configured a hostname, a secret password, and a local account. Also, I set up the console port, the auxiliary port, and the VTY ports (Telnet and SSH) to use the local account's credential to log in. In addition, because all passwords configured on an IOS (Internetwork Operating System) device, with the exception of the passwords configured with **enable secret password**, are stored in clear-text in the device configuration file. To encrypt all the passwords, I used the command **service password-encryption* in global configuration mode.
 
-Also, I shut down all the ports that I didn't use on the routers and switches. For every working port on each router, I gave it an IP address as shown in the network diagram. There is one exception which is port GigabitEthetnet0/0 on the router BackboneRT because it received an IP address from the modem in the house.
+Also, I shut down all the ports that I didn't use on the routers and switches. For every working port on each router, I gave it an IP address as shown in the network diagram. 
+Port e0 on Linux14 received an IP address automatically from the DHCP server in the subnet.
 
 ## Linux14 - Gateway to the Internet
 
 I set up **Port Address Translation** on Linux14 and used it as a gateway to the Internet because I wasn't eble to bypass captive portal from BackboneRT.
 
 ## BackboneRT
-To let all the machines inside the network to access the Internet, I enabled **Port Address Translation** on this router. Port G0/2 has an **inside global** address, and ports G0/0, G0/1, and G0/3 each has an **inside local** address. 
+To let all the machines inside the network to access the Internet, I enabled **Port Address Translation** on this router. Port G0/2 had an **inside global** address, and ports G0/0, G0/1, and G0/3 each had an **inside local** address. 
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/4.png)
 
 ## ManagementRT1 and ManagementRT2
 On both routers, I enabled **Hot Standby Router Protocol (HSRP)** to provide redundancy for the local subnets. This protocol allows me to configure one router as the active router and the other router as the standby router. All the routers in a single HSRP group shares a single virtual MAC address and a virtual IP address, which acts as a default gateway for the local network. The **active router** is responsible for forwarding the traffic, and the **standby router** will take up the responsibility of the **active router** and forwards the traffic if the **active router** fails. 
 
-The process of choosing the active router and the standby router is automatic, but I set them up manually for this lab. ManagementRT1 is the active router for VLAN 10, VLAN 30, and VLAN 50. ManagementRT2 is the active router for VLAN 20 and VLAN 40. I can manipulate this process by setting up the active router to have a higher priority than the standby router. Also, to make sure that the active router for each VLAN will always be that router if the active router fails and comes back up later, I used the command **standby preempt** which will enable the HSRP router with the highest priority to immediately become the active router. 
+The process of choosing the active router and the standby router is automatic, but I set them up manually for this lab. ManagementRT1 was the active router for VLAN 10, VLAN 30, and VLAN 50. ManagementRT2 was the active router for VLAN 20 and VLAN 40. I could manipulate this process by setting up the active router to have a higher priority than the standby router. Also, to make sure that the active router for each VLAN would always be that router if the active router fails and comes back up later, I used the command **standby preempt** which would enable the HSRP router with the highest priority to immediately become the active router. 
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/2.png)
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/3.png)
@@ -31,7 +32,7 @@ Because I set up two management routers for redundancy, when a client machine se
 
 First, I gave each HSRP group a name.
 
-Second, I used the command **ip helper-address 192.168.50.12 to let only the active router for that VLAN to forward the DHCP Discover messages to the DHCP server.
+Second, I used the command **ip helper-address 192.168.50.12 redundancy HSRP_Group_Name** on ports G0/0, G0/1, and G0/2 on both routers ManagementRT1 and ManagementRT2 to let only the active router for that VLAN to forward the DHCP Discover messages to the DHCP server.
 
 ManagementRT1
 
@@ -51,13 +52,13 @@ There are six VLANs in the network:
 * VLAN 50: Syslog VLAN
 * VLAN 60: Office VLAN
 
-eigrpRT will provide IP addresses to client machines in VLAN 60. Also, machines in VLAN 40 and VLAN 50 all have static IP addresses.
+eigrpRT would provide IP addresses to client machines in VLAN 60. Also, machines in VLAN 40 and VLAN 50 all had static IP addresses.
 
-The DHCP server in VLAN 40 will provide IP addresses to the machines in VLAN 10, VLAN 20, VLAN 30.
+The DHCP server in VLAN 40 would provide IP addresses to the machines in VLAN 10, VLAN 20, VLAN 30.
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/10.png)
 
-The spannning tree protocol mode in these switches is **Rapid Per-VLAN Spanning Tree Plus.** (RPST+)
+The spannning tree protocol mode in these switches was **Rapid Per-VLAN Spanning Tree Plus.** (RPST+)
 **Note**: I wanted to implement a two-tier LAN network to show how RPST+ worked in a network, but I wasn't able to get an EVE image for Switch Layer 3.
 
 On theses switches, for each edge port, I enabled **PortFast** and **BPDUguard**. 
@@ -112,5 +113,3 @@ On RedistributeRT, to enable OSPF and EIGRP to work together, I used router redi
 To make sure that route redsitribution worked, I browsed to the Internet from machine Linux26 in Office VLAN.
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/15.png)
-
-
