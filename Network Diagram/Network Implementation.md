@@ -31,7 +31,7 @@ Because I set up two management routers for redundancy, when a client machine se
 
 First, I gave each HSRP group a name.
 
-Second, I used this command in the picture to let only the active router for that VLAN to forward the DHCP Discover messages to the DHCP server.
+Second, I used the command **ip helper-address 192.168.50.12 to let only the active router for that VLAN to forward the DHCP Discover messages to the DHCP server.
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/16.png)
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/17.png)
