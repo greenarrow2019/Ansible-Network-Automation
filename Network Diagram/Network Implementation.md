@@ -29,7 +29,6 @@ There are five VLANs in the first network:
 
 The DHCP server in VLAN 40 will provide IP addresses to the machines in VLAN 10, VLAN 20, VLAN 30.
 
-
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/10.png)
 
 The spannning tree protocol mode in these switches is **Rapid Per-VLAN Spanning Tree Plus.** (RPST+)
@@ -41,6 +40,8 @@ PortFast will cause a switch port to enter the spanning tree forwarding state im
 Also, the edge ports are the ports that connect to client machines so that they don't typically transmit or receive **Bridge Protocol Data Units** (BPDUs). However, someone may plug a switch into one of these edge ports to learn about the network or to alter the network. To prevent that from happening, I enabled **BPDU guard** on these edge ports. If an edge port receives a BPDU, the switch will move that port into an errdisable state.
 
 In addition, I enabled **port security** with options **violation restrict, maximum 1, and mac-address sticky** on all the edge ports so that each edge port only accepts the first MAC address it receives. If a different machine is plugged in, the switch will receive an alert about it. 
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/11.png)
 
 **NOTE:**
 
@@ -55,6 +56,9 @@ Second, I used this command in the picture to let only the active router for tha
 ## Routing Protocols
 * OSPF area 0: BackboneRT, ManagementRT1, and ManagementRT2.
     * On BackboneRT, I used the command **ip route 0.0.0.0 0.0.0.0 G0/2** to to route all traffic to the Internet and added it to the routing table by using the command **default-information originate**.  
+    
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/12.png)
+
 * OSPF area 1: the link betweek BackboneRT and RedistributeRT.
 * EIGRP: RidistributeRT and EIGRP router.
 
@@ -62,18 +66,23 @@ On RedistributeRT, to enable OSPF and EIGRP to work together, I used router redi
 **Note:** Router redistribution helps increase accessibility within networks.
 
 **ManagementRT1**
+
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/5.png)
 
 **ManagementRT2**
+
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/6.png)
 
 **BackboneRT**
+
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/7.png)
 
 **RedistributeRT**
+
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/8.png)
 
 **eigrpRT**
+
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/9.png)
 
 
