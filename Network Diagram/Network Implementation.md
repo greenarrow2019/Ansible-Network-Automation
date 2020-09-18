@@ -6,6 +6,10 @@ For every router and switch, I configured a hostname, a secret password, and a l
 
 Also, I shut down all the ports that I didn't use on the routers and switches. For every working port on each router, I gave it an IP address as shown in the network diagram. There is one exception which is port GigabitEthetnet0/0 on the router BackboneRT because it received an IP address from the modem in the house.
 
+## Linux14 - Gateway to the Internet
+
+I set up **Port Address Translation** on Linux14 and used it as a gateway to the Internet because I wasn't eble to bypass captive portal from BackboneRT.
+
 ## BackboneRT
 To let all the machines inside the network to access the Internet, I enabled **Port Address Translation** on this router. Port G0/2 has an **inside global** address, and ports G0/0, G0/1, and G0/3 each has an **inside local** address. 
 
@@ -14,20 +18,23 @@ To let all the machines inside the network to access the Internet, I enabled **P
 ## ManagementRT1 and ManagementRT2
 On both routers, I enabled **Hot Standby Router Protocol (HSRP)** to provide redundancy for the local subnets. This protocol allows me to configure one router as the active router and the other router as the standby router. All the routers in a single HSRP group shares a single virtual MAC address and a virtual IP address, which acts as a default gateway for the local network. The **active router** is responsible for forwarding the traffic, and the **standby router** will take up the responsibility of the **active router** and forwards the traffic if the **active router** fails. 
 
-The process of choosing the active router and the standby router is automatic, but I set them up manually for this lab. ManagementRT1 is the active router for VLAN 10, VLAN 30, and VLAN 50. ManagementRT2 is the active router for VLAN 20 and VLAN 40. I can manipulate this process by setting up the active router to have a higher priority than the standby router. Also, to make sure that the active router for each VLAN will always be that router if the active router fails and comes back up later, I used the command ** standby preempt** which will enable the HSRP router with the highest priority to immediately become the active router. 
+The process of choosing the active router and the standby router is automatic, but I set them up manually for this lab. ManagementRT1 is the active router for VLAN 10, VLAN 30, and VLAN 50. ManagementRT2 is the active router for VLAN 20 and VLAN 40. I can manipulate this process by setting up the active router to have a higher priority than the standby router. Also, to make sure that the active router for each VLAN will always be that router if the active router fails and comes back up later, I used the command **standby preempt** which will enable the HSRP router with the highest priority to immediately become the active router. 
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/2.png)
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/3.png)
 
  
-## SyslogSW, GuestSW, StudentSW, TeacherSW, and AdminSW
+## SyslogSW, GuestSW, StudentSW, TeacherSW, AdminSW, and OfficeSW
 
-There are five VLANs in the first network:
+There are six VLANs in the network:
 * VLAN 10: Guest VLAN
 * VLAN 20: Student VLAN
 * VLAN 30: Teacher VLAN
 * VLAN 40: Admin VLAN
 * VLAN 50: Syslog VLAN
+* VLAN 60: Office VLAN
+
+eigrpRT will provide IP addresses to client machines in VLAN 60. Also, machines in VLAN 40 and VLAN 50 all have static IP addresses.
 
 The DHCP server in VLAN 40 will provide IP addresses to the machines in VLAN 10, VLAN 20, VLAN 30.
 
@@ -44,6 +51,12 @@ Also, the edge ports are the ports that connect to client machines so that they 
 In addition, I enabled **port security** with options **violation restrict, maximum 1, and mac-address sticky** on all the edge ports so that each edge port only accepts the first MAC address it receives. If a different machine is plugged in, the switch will receive an alert about it. 
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/11.png)
+
+## eigrpRT
+
+I also enabled **Port Address Translation** on this router with G0/0 as the **inside global** port and G0/1 as the **inside local** port.
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/14.png)
 
 **NOTE:**
 
@@ -87,5 +100,8 @@ On RedistributeRT, to enable OSPF and EIGRP to work together, I used router redi
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/9.png)
 
+To make sure that route redsitribution worked, I browsed to the Internet from machine Linux26 in Office VLAN.
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/15.png)
 
 
