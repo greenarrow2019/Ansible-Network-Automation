@@ -35,11 +35,11 @@ Second, I used the command **ip helper-address 192.168.50.12 to let only the act
 
 ManagementRT1
 
-![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/16.png)
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/17.png)
 
 ManagementRT2
 
-![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/17.png)
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/16.png)
  
 ## SyslogSW, GuestSW, StudentSW, TeacherSW, AdminSW, and OfficeSW
 
