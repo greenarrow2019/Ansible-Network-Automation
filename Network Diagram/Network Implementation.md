@@ -33,7 +33,12 @@ First, I gave each HSRP group a name.
 
 Second, I used the command **ip helper-address 192.168.50.12 to let only the active router for that VLAN to forward the DHCP Discover messages to the DHCP server.
 
+ManagementRT1
+
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/16.png)
+
+ManagementRT2
+
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/17.png)
  
 ## SyslogSW, GuestSW, StudentSW, TeacherSW, AdminSW, and OfficeSW
