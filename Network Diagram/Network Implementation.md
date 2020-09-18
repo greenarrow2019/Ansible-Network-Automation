@@ -7,17 +7,17 @@ For every router and switch, I configured a hostname, a secret password, and a l
 Also, I shut down all the ports that I didn't use on the routers and switches. For every working port on each router, I gave it an IP address as shown in the network diagram. There is one exception which is port GigabitEthetnet0/0 on the router BackboneRT because it received an IP address from the modem in the house.
 
 ## BackboneRT
-To let all the machines inside the network to access the Internet, I enabled **Port Address Translation** on this router. Port G0/0 has an **inside global** address, and ports G0/1, G0/2, and G0/3 each has an **inside local** address. 
+To let all the machines inside the network to access the Internet, I enabled **Port Address Translation** on this router. Port G0/2 has an **inside global** address, and ports G0/0, G0/1, and G0/3 each has an **inside local** address. 
 
 ## ManagementRT1 and ManagementRT2
 On both routers, I enabled **Hot Standby Router Protocol (HSRP)** to provide redundancy for the local subnets. This protocol allows me to configure one router as the active router and the other router as the standby router. All the routers in a single HSRP group shares a single virtual MAC address and a virtual IP address, which acts as a default gateway for the local network. The **active router** is responsible for forwarding the traffic, and the **standby router** will take up the responsibility of the **active router** and forwards the traffic if the **active router** fails. 
 
 The process of choosing the active router and the standby router is automatic, but I set them up manually for this lab. ManagementRT1 is the active router for VLAN 10, VLAN 30, and VLAN 50. ManagementRT2 is the active router for VLAN 20 and VLAN 40. I can manipulate this process by setting up the active router to have a higher priority than the standby router. Also, to make sure that the active router for each VLAN will always be that router if the active router fails and comes back up later, I used the command ** standby preempt** which will enable the HSRP router with the highest priority to immediately become the active router. 
 
-Also, these two routers will provide an IP address to every machine that belongs to VLAN 50. 
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/2.png)
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/3.png)
 
-In addition, because routers don't forward broadcast packets, machines in VLAN 10, 20, 30, and 40 won't receive IP addresses from the DHCP server in VLAN 50 because they aren't in the same physical subnet. To solve this problem, I enabled relay agents on both routers with the commmand **ip helper-address 192.168.50.12** on interface e1/0. 
-
+ 
 ## ManagementSW, GuestSW, StudentSW, TeacherSW, and AdminSW
 
 There are five VLANs in the first network:
@@ -80,6 +80,9 @@ On ManagementSW:
 
 
 **NOTE:**
+
+In addition, because routers don't forward broadcast packets, machines in VLAN 10, 20, 30, and 50 won't receive IP addresses from the DHCP server in VLAN 40 because they aren't in the same physical subnet. To solve this problem, I enabled relay agents on both routers on interfaces g0/0, g0/1, g0/2, g0/3, and g0/4.
+
 Because I set up two management routers for redundancy, when a client machine sends a DHCP Discover message, it will be flushed to both routers which means the DHCP server will receive two DHCP Discover messages from one machine. In a large network, this can create unnecessary traffic. The solution is to only allow the active HSRP router to forward this message. 
 First, I gave each HSRP group a name.
 
@@ -93,4 +96,7 @@ Second, I used this command in the picture to let only the active router for tha
 
 On RedistributeRT, to enable OSPF and EIGRP to work together, I used router redistribution so that EIGRP routes will appear as OSPF routes in OSPF routers' routing tables and vice versa. 
 **Note:** Router redistribution helps increase accessibility within networks.
+
+
+
 
