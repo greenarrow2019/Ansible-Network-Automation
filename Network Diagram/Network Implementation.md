@@ -25,9 +25,9 @@ There are five VLANs in the first network:
 * VLAN 20: Student VLAN
 * VLAN 30: Teacher VLAN
 * VLAN 40: Admin VLAN
-* VLAN 50: Management VLAN
+* VLAN 50: Syslog VLAN
 
-The DHCP server in VLAN 50 will provide IP addresses to the machines in VLAN 10, VLAN 20, VLAN 30, and VLAN 40. Also, the DNS server in VLAN 50 is the DNS server for every machine in VLAN 10, VLAN 20, VLAN 30, VLAN 40, and VLAN 50.
+The DHCP server in VLAN 40 will provide IP addresses to the machines in VLAN 10, VLAN 20, VLAN 30.
 
 The spannning tree protocol mode in these switches is **Rapid Per-VLAN Spanning Tree Plus.** (RPST+)
 
