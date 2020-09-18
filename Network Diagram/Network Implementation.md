@@ -23,6 +23,18 @@ The process of choosing the active router and the standby router is automatic, b
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/2.png)
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/3.png)
 
+**NOTE:**
+
+In addition, because routers don't forward broadcast packets, machines in VLAN 10, 20, and 30 won't receive IP addresses from the DHCP server in VLAN 40 because they aren't in the same physical subnet. To solve this problem, I enabled relay agents on both routers on interfaces g0/0, g0/1, and g0/2.
+
+Because I set up two management routers for redundancy, when a client machine sends a DHCP Discover message, it will be flushed to both routers which means the DHCP server will receive two DHCP Discover messages from one machine. In a large network, this can create unnecessary traffic. The solution is to only allow the active HSRP router to forward this message. 
+
+First, I gave each HSRP group a name.
+
+Second, I used this command in the picture to let only the active router for that VLAN to forward the DHCP Discover messages to the DHCP server.
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/16.png)
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/17.png)
  
 ## SyslogSW, GuestSW, StudentSW, TeacherSW, AdminSW, and OfficeSW
 
@@ -41,10 +53,11 @@ The DHCP server in VLAN 40 will provide IP addresses to the machines in VLAN 10,
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/10.png)
 
 The spannning tree protocol mode in these switches is **Rapid Per-VLAN Spanning Tree Plus.** (RPST+)
+**Note**: I wanted to implement a two-tier LAN network to show how RPST+ worked in a network, but I wasn't able to get an EVE image for Switch Layer 3.
 
 On theses switches, for each edge port, I enabled **PortFast** and **BPDUguard**. 
 
-PortFast will cause a switch port to enter the spanning tree forwarding state immediately, bypassing the learning state. This feature helps client machines to receive IP addresses from a DHCP server immediately when they boot up and don't have to wait for the spanning tree protocol to finish converging. 
+**PortFast** will cause a switch port to enter the spanning tree forwarding state immediately, bypassing the learning state. This feature helps client machines to receive IP addresses from a DHCP server immediately when they boot up and don't have to wait for the spanning tree protocol to finish converging. 
 
 Also, the edge ports are the ports that connect to client machines so that they don't typically transmit or receive **Bridge Protocol Data Units** (BPDUs). However, someone may plug a switch into one of these edge ports to learn about the network or to alter the network. To prevent that from happening, I enabled **BPDU guard** on these edge ports. If an edge port receives a BPDU, the switch will move that port into an errdisable state.
 
@@ -58,15 +71,6 @@ I also enabled **Port Address Translation** on this router with G0/0 as the **in
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/14.png)
 
-**NOTE:**
-
-In addition, because routers don't forward broadcast packets, machines in VLAN 10, 20, and 30 won't receive IP addresses from the DHCP server in VLAN 40 because they aren't in the same physical subnet. To solve this problem, I enabled relay agents on both routers on interfaces g0/0, g0/1, and g0/2.
-
-Because I set up two management routers for redundancy, when a client machine sends a DHCP Discover message, it will be flushed to both routers which means the DHCP server will receive two DHCP Discover messages from one machine. In a large network, this can create unnecessary traffic. The solution is to only allow the active HSRP router to forward this message. 
-
-First, I gave each HSRP group a name.
-
-Second, I used this command in the picture to let only the active router for that VLAN to forward the DHCP Discover messages to the DHCP server.
 
 ## Routing Protocols
 * OSPF area 0: BackboneRT, ManagementRT1, and ManagementRT2.
