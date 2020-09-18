@@ -9,6 +9,8 @@ Also, I shut down all the ports that I didn't use on the routers and switches. F
 ## BackboneRT
 To let all the machines inside the network to access the Internet, I enabled **Port Address Translation** on this router. Port G0/2 has an **inside global** address, and ports G0/0, G0/1, and G0/3 each has an **inside local** address. 
 
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/4.png)
+
 ## ManagementRT1 and ManagementRT2
 On both routers, I enabled **Hot Standby Router Protocol (HSRP)** to provide redundancy for the local subnets. This protocol allows me to configure one router as the active router and the other router as the standby router. All the routers in a single HSRP group shares a single virtual MAC address and a virtual IP address, which acts as a default gateway for the local network. The **active router** is responsible for forwarding the traffic, and the **standby router** will take up the responsibility of the **active router** and forwards the traffic if the **active router** fails. 
 
