@@ -61,11 +61,19 @@ Second, I used this command in the picture to let only the active router for tha
 On RedistributeRT, to enable OSPF and EIGRP to work together, I used router redistribution so that EIGRP routes will appear as OSPF routes in OSPF routers' routing tables and vice versa. 
 **Note:** Router redistribution helps increase accessibility within networks.
 
-
+**ManagementRT1**
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/5.png)
+
+**ManagementRT2**
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/6.png)
+
+**BackboneRT**
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/7.png)
+
+**RedistributeRT**
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/8.png)
+
+**eigrpRT**
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/9.png)
 
 
