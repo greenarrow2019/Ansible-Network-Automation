@@ -41,22 +41,35 @@ Ansible aims for simplicity and easy to understand while maintaining the efficie
 ## 4. Installing Ansible
 I will install Ansible on CentOS 8 machine in VLAN50.
 * To install Ansible for CentOS 8, first ensure that the CentOS 8 EPEL (Extra Packages for Enterprise Linux) repository is installed:
+
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/4.png)
+
 * Once the repository is installed, install Ansible with **yum**:
+
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/1.png)
+
 * Checking the version of Ansible to make sure it is installed:
+
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/2.png)
+
 * Testing it by pinging the localhost:
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/3.png)
 
 * Next, generating a new SSH key on the control node:
+
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/5.png)
+
 * Because the control node connects to the managed nodes via SSH, I copy the newly generated SSH public key from the control node to the managed nodes:
+
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/6.png)
+
 * Creating a host list in the **hosts** file:
+
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/8.png)
+
 * pinging the managed machines:
+
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/7.png)
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/9.png)
