@@ -38,3 +38,28 @@ Ansible aims for simplicity and easy to understand while maintaining the efficie
 * Playbooks
   * Ordered lists of tasks, saved so we can run those tasks in that order repeatedly. 
   * Playbooks are written in YAML.
+## 4. Installing Ansible
+I will install Ansible on CentOS 8 machine in VLAN50.
+* To install Ansible for CentOS 8, first ensure that the CentOS 8 EPEL (Extra Packages for Enterprise Linux) repository is installed:
+![](4.png)
+* Once the repository is installed, install Ansible with **yum**:
+![](1.png)
+* Checking the version of Ansible to make sure it is installed:
+![](2.png)
+* Testing it by pinging the localhost:
+![](3.png)
+* Next, generating a new SSH key on the control node:
+![](5.png)
+* Because the control node connects to the managed nodes via SSH, I copy the newly generated SSH public key from the control node to the managed nodes:
+![](6.png)
+* Creating a host list in the **hosts** file:
+![](8.png)
+* pinging the managed machines:
+![](7.png)
+
+![](9.png)
+
+![](10.png)
+
+We can see how Ansible can help me save time because I can ping multiple machines at the same time. 
+
