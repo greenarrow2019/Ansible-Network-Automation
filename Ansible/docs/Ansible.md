@@ -29,7 +29,7 @@ Ansible aims for simplicity and easy to understand while maintaining the efficie
   * Ansible doesn't need to be installed on managed nodes.
 * Inventory
   * A list of managed nodes. 
-  * Managed nodes can be separated into different groups for better management. 
+  * Managed nodes can be assigned into different groups for better management. 
 * Modules
   * The units of code Ansible executes.
   * Each module has a particular use.
