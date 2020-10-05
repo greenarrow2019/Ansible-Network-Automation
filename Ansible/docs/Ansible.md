@@ -30,6 +30,7 @@ Ansible aims for simplicity and easy to understand while maintaining the efficie
 * Inventory
   * A list of managed nodes. 
   * Managed nodes can be assigned into different groups for better management. 
+  * The default inventory file is at **/etc/ansible/hosts**
 * Modules
   * The units of code Ansible executes.
   * Each module has a particular use.
