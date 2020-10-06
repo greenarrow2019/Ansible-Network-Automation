@@ -24,6 +24,7 @@ Ansible aims for simplicity and easy to understand while maintaining the efficie
 * Control node
   * Any machine with Ansible installed.
   * We can have multiple control nodes.
+  * The configuration file is located at /etc/ansible/ansible.cfg
 * Managed nodes
   * The network devices andd/or servers we manage with Ansible.
   * Ansible doesn't need to be installed on managed nodes.
@@ -75,6 +76,8 @@ I will install Ansible on CentOS 8 machine in VLAN50.
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/7.png)
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/9.png)
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/11.png)
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/10.png)
 
