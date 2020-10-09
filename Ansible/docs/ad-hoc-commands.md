@@ -9,6 +9,8 @@ ansible [pattern] -m [module] -a "[module options]"
 * module: the Ansible module we intend to use
 * module options: arguments
 
+## 2. Woorking with routers
+
 Example:
 I will pull some information from the routers in the network.
 
@@ -44,3 +46,50 @@ I can also extract the output to a file:
 
 **Note:**
 I use the module **raw** in this case because this module doesn't require Python installed on the remote system, and routers don't have Python installed on the system.
+
+## 3. Working with CentOS:
+
+#### Module file:
+
+This module is used to set attributes of files and directories. Also, we use it to remove files and directories.
+
+* To create a file and set its permissions:
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/19.png)
+
+Checking back on the machine: (the list vlan40 contains 3 machines, but I will show only the results from the first machine as examples.)
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/20.png)
+
+* To change permissions of a file:
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/21.png)
+
+Checking back on the machine:
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/22.png)
+
+* To change the owner and the group of the file:
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/23.png)
+
+Checking back on the machine:
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/24.png)
+
+* To create a directory:
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/25.png)
+
+Checking back on the machine:
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/26.png)
+
+* To delete a directory recursively:
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/27.png)
+
+Checking back on the machine:
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/28.png)
+
