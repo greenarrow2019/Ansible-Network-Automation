@@ -108,3 +108,10 @@ We use the module yum to install, upgrade, uninstall, and list packages.
 Checking back on the machine:
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/30.png)
+
+**Conclusion:**
+
+There are a lot of useful modules that Ansible provides for automation tasks.
+
+To see a full list of modules, please check this link:
+https://docs.ansible.com/ansible/2.3/list_of_all_modules.html
