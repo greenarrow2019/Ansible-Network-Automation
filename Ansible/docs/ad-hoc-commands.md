@@ -93,3 +93,18 @@ Checking back on the machine:
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/28.png)
 
+#### Module yum:
+
+We use the module yum to install, upgrade, uninstall, and list packages.
+
+* To install a package, specify the state **installed**
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/29.png)
+
+**Note:** 
+* To ensure the latest version is installed, use the state **latest**
+* To remove a package, use the state **absent** or **remove**
+
+Checking back on the machine:
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/30.png)
