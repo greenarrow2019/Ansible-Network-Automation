@@ -24,12 +24,15 @@ Ansible aims for simplicity and easy to understand while maintaining the efficie
 * Control node
   * Any machine with Ansible installed.
   * We can have multiple control nodes.
+  * The configuration file is located at /etc/ansible/ansible.cfg
 * Managed nodes
   * The network devices andd/or servers we manage with Ansible.
   * Ansible doesn't need to be installed on managed nodes.
 * Inventory
   * A list of managed nodes. 
   * Managed nodes can be assigned into different groups for better management. 
+  * The default inventory file is at **/etc/ansible/hosts**
+  * You can use the **-i option** to specify the inventory file if you don't use the default inventory file. 
 * Modules
   * The units of code Ansible executes.
   * Each module has a particular use.
@@ -41,25 +44,42 @@ Ansible aims for simplicity and easy to understand while maintaining the efficie
 ## 4. Installing Ansible
 I will install Ansible on CentOS 8 machine in VLAN50.
 * To install Ansible for CentOS 8, first ensure that the CentOS 8 EPEL (Extra Packages for Enterprise Linux) repository is installed:
-![](4.png)
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/4.png)
+
 * Once the repository is installed, install Ansible with **yum**:
-![](1.png)
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/1.png)
+
 * Checking the version of Ansible to make sure it is installed:
-![](2.png)
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/2.png)
+
 * Testing it by pinging the localhost:
-![](3.png)
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/3.png)
+
 * Next, generating a new SSH key on the control node:
-![](5.png)
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/5.png)
+
 * Because the control node connects to the managed nodes via SSH, I copy the newly generated SSH public key from the control node to the managed nodes:
-![](6.png)
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/6.png)
+
 * Creating a host list in the **hosts** file:
-![](8.png)
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/8.png)
+
 * pinging the managed machines:
-![](7.png)
 
-![](9.png)
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/7.png)
 
-![](10.png)
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/9.png)
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/11.png)
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/10.png)
 
 We can see how Ansible can help me save time because I can ping multiple machines at the same time. 
 
