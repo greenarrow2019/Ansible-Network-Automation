@@ -8,7 +8,7 @@
 ansible [pattern] -m [module] -a "[module options]"
 * pattern: the managed host(s)
 * module: the Ansible module we intend to use
-* module options: the options of that module
+* module options: arguments
 
 Example:
 I will pull some information from the routers in the network.
@@ -18,6 +18,10 @@ First, I create a host list for the management routers and the backbone router.
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/12.png)
 
 The interfaces on the managementRT list:
+
+**Note**:
+* -u: Username
+* -k: Password
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/13.png)
 
