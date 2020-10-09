@@ -10,3 +10,29 @@ ansible [pattern] -m [module] -a "[module options]"
 * module: the Ansible module we intend to use
 * module options: the options of that module
 
+Example:
+I will pull some information from the routers in the network.
+
+First, I create a host list for the management routers and the backbone router.
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/12.png)
+
+The interfaces on the managementRT list:
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/13.png)
+
+The interfaces on the backboneRT list:
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/14.png)
+
+Also, I can check the status of Hot Standby Router Protocol on both management routers:
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/15.png)
+
+I can choose to run the command against two inventories:
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/16.png)
+
+I can also extract the output to a file:
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/17.png)
