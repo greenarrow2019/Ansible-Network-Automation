@@ -36,3 +36,5 @@ I can choose to run the command against two inventories:
 I can also extract the output to a file:
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/17.png)
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/18.png)
