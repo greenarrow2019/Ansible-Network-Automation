@@ -1,3 +1,19 @@
+### ***Table of contents***
+
+[Linux 14](#1)
+
+[BackboneRT](#2)
+
+[ManagementRTs](#3)
+
+[Switches](#4)
+
+[eigrpRT](#5)
+
+[Routing Protocols](#6)
+
+---
+
 I built a network diagram and configured every node manually before using Ansible for automation because I wanted to make sure every command worked when I typed them.
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/1.png)
@@ -7,16 +23,21 @@ For every router and switch, I configured a hostname, a secret password, and a l
 Also, I shut down all the ports that I didn't use on the routers and switches. For every working port on each router, I gave it an IP address as shown in the network diagram. 
 Port e0 on Linux14 received an IP address automatically from the DHCP server in the subnet.
 
+<a name = '1'></a>
 ## Linux14 - Gateway to the Internet
 
 I set up **Port Address Translation** on Linux14 and used it as a gateway to the Internet because I wasn't eble to bypass captive portal from BackboneRT.
 
+<a name = '2'></a>
 ## BackboneRT
+
 To let all the machines inside the network to access the Internet, I enabled **Port Address Translation** on this router. Port G0/2 had an **inside global** address, and ports G0/0, G0/1, and G0/3 each had an **inside local** address. 
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/4.png)
 
+<a name = '3'></a>
 ## ManagementRT1 and ManagementRT2
+
 On both routers, I enabled **Hot Standby Router Protocol (HSRP)** to provide redundancy for the local subnets. This protocol allows me to configure one router as the active router and the other router as the standby router. All the routers in a single HSRP group shares a single virtual MAC address and a virtual IP address, which acts as a default gateway for the local network. The **active router** is responsible for forwarding the traffic, and the **standby router** will take up the responsibility of the **active router** and forwards the traffic if the **active router** fails. 
 
 The process of choosing the active router and the standby router is automatic, but I set them up manually for this lab. ManagementRT1 was the active router for VLAN 10, VLAN 30, and VLAN 50. ManagementRT2 was the active router for VLAN 20 and VLAN 40. I could manipulate this process by setting up the active router to have a higher priority than the standby router. Also, to make sure that the active router for each VLAN would always be that router if the active router fails and comes back up later, I used the command **standby preempt** which would enable the HSRP router with the highest priority to immediately become the active router. 
@@ -42,6 +63,7 @@ ManagementRT2
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/16.png)
  
+ <a name = '4'></a>
 ## SyslogSW, GuestSW, StudentSW, TeacherSW, AdminSW, and OfficeSW
 
 There are six VLANs in the network:
@@ -71,14 +93,16 @@ In addition, I enabled **port security** with options **violation restrict, maxi
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/11.png)
 
+<a name = '5'></a>
 ## eigrpRT
 
 I also enabled **Port Address Translation** on this router with G0/0 as the **inside global** port and G0/1 as the **inside local** port.
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/14.png)
 
-
+<a name = '6'></a>
 ## Routing Protocols
+
 * OSPF area 0: BackboneRT, ManagementRT1, and ManagementRT2.
     * On BackboneRT, I used the command **ip route 0.0.0.0 0.0.0.0 G0/2** to to route all traffic to the Internet and added it to the routing table by using the command **default-information originate**.  
     
@@ -88,6 +112,7 @@ I also enabled **Port Address Translation** on this router with G0/0 as the **in
 * EIGRP: RidistributeRT and EIGRP router.
 
 On RedistributeRT, to enable OSPF and EIGRP to work together, I used router redistribution so that EIGRP routes will appear as OSPF routes in OSPF routers' routing tables and vice versa. 
+
 **Note:** Router redistribution helps increase accessibility within networks.
 
 **ManagementRT1**
