@@ -2,7 +2,7 @@
 
 [1. Implementing a simple Network](#1)
 
-[2. Configure the vIOS router](#2)
+[2. Configuring the vIOS router](#2)
 
 ---
 
