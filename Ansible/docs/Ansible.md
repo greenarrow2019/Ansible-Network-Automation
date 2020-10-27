@@ -51,7 +51,8 @@ Ansible aims for simplicity and easy to understand while maintaining the efficie
   * A list of managed nodes. 
   * Managed nodes can be assigned into different groups for better management. 
   * The default inventory file is at **/etc/ansible/hosts**
-  * You can use the **-i option** to specify the inventory file if you don't use the default inventory file. 
+  * You can use the **-i option** to specify the inventory file if you don't use the default inventory file.
+  * It can be written in INI or YAML format. In this project, I write the inventory file in INI format.
   
 * Modules
   * The units of code Ansible executes.
@@ -59,6 +60,7 @@ Ansible aims for simplicity and easy to understand while maintaining the efficie
   
 * Tasks
   * The units of action in Ansible.
+  * A task will use a module.
   
 * Playbooks
   * Ordered lists of tasks, saved so we can run those tasks in that order repeatedly. 
