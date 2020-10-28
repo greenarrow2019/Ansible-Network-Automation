@@ -8,6 +8,8 @@ There is a better way which is to save the task(s) into a playbook and run the p
 
 A playbook is written in YAML language which is human-readable.
 
+**Note**: Indentation is an important part in YAML language.
+
 A playbook consists of one or more **plays** in an ordered list which means Ansible will execute each play at a time from top
 to bottom. each **play** contains one or more **tasks**, and each **task** calls an Ansible module. If a play has more than one task, 
 Ansible will also run each task from top to bottom one at a time against all machines matched by the host pattern. 
@@ -16,11 +18,49 @@ Each play or each task usually has a **name** attribute, and Ansible will displa
 
 ## 3. Examples
 
+### getarp.yml
+
+This playbook is run against the backboneRT. The purpose of this playbook is to get the arp table from that router.
+
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/32.png)
+
+The image above is an example of a simple playbook written in YAML. 
+
+A YAML file normally has **---** at the beginning of the file to indicate the start of the file.
+
+Then, all the plays will begin at the same indentation level starting with a **- ** (a dash and a space)
+
+#### Some components that may appear in a play:
+
+* name: A description of a play or a task. This is where we can write what the play or the task is about. 
+
+* hosts: a list of devices that is the play's target.
+
+* gather_facts: Normally, Ansible will automatically gather facts about the targeted devices before executing the play(s). In this 
+example, I turn off facts gathering by setting the ketword **gather_facts** to **false**.
+
+* tasks: A list of task(s) to be executed in the play. Each task normally starts with a **name** to indicate the start of a task. 
+
+* register: This is the name of variable that will contain task status and module return data.
+
+* debug: this line will print the result out on the screen.
+
+**Note**: Indentation is important in YAML.
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/31.png)
 
+When I run the playbook getarp.yml, it will print out the name of the play, the name of the task, the output of the task, and the summary of the playbook.
+
+### apache.yml
+
+This playbook is run against all the hosts in vlan 10. This playbook is used to install Apache on CentOS.
+
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/33.png)
+
+The targeted hosts are the hosts in vlan 10.
+
+
+
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/36.png)
 
