@@ -20,7 +20,7 @@ Each play or each task usually has a **name** attribute, and Ansible will displa
 
 ### getarp.yml
 
-This playbook is run against the backboneRT. The purpose of this playbook is to get the arp table from that router.
+This playbook was run against the backboneRT. The purpose of this playbook was to get the arp table from that router.
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/32.png)
 
@@ -49,24 +49,24 @@ example, I turn off facts gathering by setting the ketword **gather_facts** to *
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/31.png)
 
-When I run the playbook getarp.yml, it will print out the name of the play, the name of the task, the output of the task, and the summary of the playbook.
+When I ran the playbook getarp.yml, it printed out the name of the play, the name of the task, the output of the task, and the summary of the playbook.
 
 ### apache.yml
 
-This playbook is run against all the hosts in vlan 30. This playbook is used to install Apache on CentOS.
+This playbook was run against all the hosts in vlan 30. This playbook was used to install Apache on CentOS.
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/33.png)
 
-The targeted hosts are the hosts in vlan 30.
+The targeted hosts were the hosts in vlan 30.
 
 By default, Ansible will run in parallel against all the targeted hosts. However, there is a way to define how many hosts Ansible can run against at a time
-using the keyword **serial**. In this example, I'm telling Ansible to run against two machines at a time. By doing this, I can prevent lagging and save bandwidth for other tasks.
+using the keyword **serial**. In this example, I told Ansible to run against two machines at a time. By doing this, I could prevent lagging and save bandwidth for other tasks.
 
-Because installing a package is a task for root user, I need to run this play as root. **remote_user** defines the user used to log into the targeted machines via SSH. 
+Because installing a package is a task for root user, I needed to run this play as root. **remote_user** defines the user used to log into the targeted machines via SSH. 
 
-In this example, I'm using the **yum** module to install Apache on CentOS. The **name: httpd** specifies the package. The **state: latest** means the latest version of Apache. 
+In this example, I used the **yum** module to install Apache on CentOS. The **name: httpd** specifies the package. The **state: latest** means the latest version of Apache. 
 
-To make sure the service is run on boot, I use the module **service**. The **enabled: true** makes sure Apache starts on boot. The **state: started** indicates the service will start after installing. 
+To make sure the service is run on boot, I used the module **service**. The **enabled: true** makes sure Apache starts on boot. The **state: started** indicates the service will start after installing. 
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/36.png)
 
