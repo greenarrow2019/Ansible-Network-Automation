@@ -59,10 +59,20 @@ This playbook is run against all the hosts in vlan 30. This playbook is used to 
 
 The targeted hosts are the hosts in vlan 30.
 
+By default, Ansible will run in parallel against all the targeted hosts. However, there is a way to define how many hosts Ansible can run against at a time
+using the keyword **serial**. In this example, I'm telling Ansible to run against two machines at a time. By doing this, I can prevent lagging and save bandwidth for other tasks.
 
+Because installing a package is a task for root user, I need to run this play as root. **remote_user** defines the user used to log into the targeted machines via SSH. 
 
+In this example, I'm using the **yum** module to install Apache on CentOS. The **name: httpd** specifies the package. The **state: latest** means the latest version of Apache. 
+
+To make sure the service is run on boot, I use the module **service**. The **enabled: true** makes sure Apache starts on boot. The **state: started** indicates the service will start after installing. 
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/36.png)
+
+By default, Ansible doesn't print out facts it gathers from the machines, and it only prints out the result whether the tasks succeed or fail. 
+
+To confirm that Apache was installed successfully on the targeted machines, I went and checked on one of those machines.
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/34.png)
 
