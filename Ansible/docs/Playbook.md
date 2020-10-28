@@ -14,3 +14,17 @@ Ansible will also run each task from top to bottom one at a time against all mac
 
 Each play or each task usually has a **name** attribute, and Ansible will display the **name** of the play or the task after it is run. When Ansible finishes executing all the play(s), it provides a summary of the targeted machines and how they perform. 
 
+## 3. Examples
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/32.png)
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/31.png)
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/33.png)
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/36.png)
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/34.png)
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/35.png)
+
