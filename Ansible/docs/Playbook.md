@@ -53,11 +53,11 @@ When I run the playbook getarp.yml, it will print out the name of the play, the 
 
 ### apache.yml
 
-This playbook is run against all the hosts in vlan 10. This playbook is used to install Apache on CentOS.
+This playbook is run against all the hosts in vlan 30. This playbook is used to install Apache on CentOS.
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/33.png)
 
-The targeted hosts are the hosts in vlan 10.
+The targeted hosts are the hosts in vlan 30.
 
 
 
