@@ -8,6 +8,8 @@
 
 [4. Installing Ansible](#4)
 
+---
+
 <a name = '1'></a>
 ## 1. Why do we need Ansible?
 
