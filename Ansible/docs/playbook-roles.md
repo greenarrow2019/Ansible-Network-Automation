@@ -1,3 +1,12 @@
+### ***Table of contents***
+
+[1. Potential problems with playbooks](#1)
+
+[2. Introduction](#2)
+
+---
+
+<a name = '1'></a>
 ## 1. Potential problems with playbooks
 
 The playbook is great because we can add multiple plays and tasks into one playbook to control and configure different operating systems. This is convenient because everything is stored in one file. 
@@ -6,7 +15,8 @@ However, when we have a large system with a lot of devices at different departme
 
 Ansible came up with a new approach which can solve this problem. Ansible lets users organize tasks in a directory structure called a **Role**. Breaking down a big playbook into multiple small files, and each file only has one purpose can help people work together easily. 
 
-## 2.
+<a name = '2'></a>
+## 2. Introduction
 
 An Ansible role has a defined directory structure with seven main standard directories:
 * tasks: contains a list of tasks to be executed by the role.
