@@ -1,3 +1,18 @@
+### ***Table of contents***
+
+[1. Defining variables](#1)
+
+[2. BackboneRT](#2)
+
+[3. ManagementRT1](#3)
+
+[4. ManagementRT2](#4)
+
+[5. Confirmation](#5)
+
+---
+
+<a name = '1'></a>
 ## 1. Defining variables
 
 For this project, I decided to set up the same username and password for management router 1, management router 2, and the backbone router. 
@@ -41,6 +56,7 @@ On Cisco routers, this is called the **enable** mode.
 
 * ansible_become_password: this password will enable privilege mode. 
 
+<a name = '2'></a>
 ## 2. BackboneRT
 
 When Ansible runs this playbook for backbone router, it will look for those variables that were defined in the **hosts** file under **backboneRT:vars**.
@@ -66,6 +82,7 @@ I created a playbook to configure the following:
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/44.png)
 
+<a name = '3'></a>
 ## 3. ManagementRT1
 
 When Ansible runs this playbook for management router 1, it will look for those variables that were defined in the **hosts** file under **managementRT1:vars**.
@@ -93,6 +110,7 @@ I created a playbook to configure the following:
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/47.png)
 
+<a name = '4'></a>
 ## 4. ManagementRT2
 
 When Ansible runs this playbook for management router 2, it will look for those variables that were defined in the **hosts** file under **managementRT2:vars**.
@@ -120,6 +138,7 @@ I created a playbook to configure the following:
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/50.png)
 
+<a name = '5'></a>
 ## 5. Confirmation
 
 To confirm that those playbooks were applied successfully to the targeted routers, I also wrote three playbooks that would print out **running-config** from those routers.
