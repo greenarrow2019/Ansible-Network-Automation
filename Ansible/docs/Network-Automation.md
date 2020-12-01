@@ -43,9 +43,31 @@ On Cisco routers, this is called the **enable** mode.
 
 ## 2. BackboneRT
 
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/42.png)
 
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/43.png)
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/44.png)
 
 ## 3. ManagementRT1
 
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/41.png)
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/45.png)
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/46.png)
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/47.png)
+
 ## 4. ManagementRT2
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/40.png)
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/48.png)
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/49.png)
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/50.png)
+
+
 
