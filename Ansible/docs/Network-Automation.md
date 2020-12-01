@@ -43,7 +43,24 @@ On Cisco routers, this is called the **enable** mode.
 
 ## 2. BackboneRT
 
+When Ansible runs this playbook for backbone router, it will look for those variables that were defined in the **hosts** file under **backboneRT:vars**.
+
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/42.png)
+
+When the playbook is run successfully, the **failed count** equals 0.
+
+I created a playbook to configure the following:
+|  |  |
+| --- | --- |
+|  Setting up the hostname  |  Update the login banner  |  
+|  Remove the motd banner  |  Remove the exec banner  |
+|  Enable password encryption and disable ip domain-lookup  |
+|  Console password  |  Auxiliary port password  |
+|  Loopback  |  G0/0  |
+|  G0/1  |  G0/2  |
+|  G0/3  |  OSPF  |
+|  Static route to the Internet  |  acl for PAT  |
+|  configure PAT  |  save the configuration  |
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/43.png)
 
@@ -51,7 +68,24 @@ On Cisco routers, this is called the **enable** mode.
 
 ## 3. ManagementRT1
 
+When Ansible runs this playbook for management router 1, it will look for those variables that were defined in the **hosts** file under **managementRT1:vars**.
+
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/41.png)
+
+When the playbook is run successfully, the **failed count** equals 0.
+
+I created a playbook to configure the following:
+|  |  |
+| --- | --- |
+|  Setting up the hostname  |  Update the login banner  |  
+|  Remove the motd banner  |  Remove the exec banner  |
+|  Enable password encryption and disable ip domain-lookup  |
+|  Console password  |  Auxiliary port password  |
+|  Loopback  |  G0/0  |
+|  G0/1  |  G0/2  |
+|  G0/3  |  G0/4  |
+|  G0/5  |  shutdown unused ports  |
+|  OSPF  |  save the configuration  |
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/45.png)
 
@@ -61,7 +95,24 @@ On Cisco routers, this is called the **enable** mode.
 
 ## 4. ManagementRT2
 
+When Ansible runs this playbook for management router 2, it will look for those variables that were defined in the **hosts** file under **managementRT2:vars**.
+
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/40.png)
+
+When the playbook is run successfully, the **failed count** equals 0.
+
+I created a playbook to configure the following:
+|  |  |
+| --- | --- |
+|  Setting up the hostname  |  Update the login banner  |  
+|  Remove the motd banner  |  Remove the exec banner  |
+|  Enable password encryption and disable ip domain-lookup  |
+|  Console password  |  Auxiliary port password  |
+|  Loopback  |  G0/0  |
+|  G0/1  |  G0/2  |
+|  G0/3  |  G0/4  |
+|  G0/5  |  shutdown unused ports  |
+|  OSPF  |  save the configuration  |
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/48.png)
 
@@ -69,5 +120,21 @@ On Cisco routers, this is called the **enable** mode.
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/50.png)
 
+## 5. Confirmation
 
+To confirm that those playbooks were applied successfully to the targeted routers, I also wrote three playbooks that would print out **running-config** from those routers.
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/51.png)
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/52.png)
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/53.png)
+
+I ran the **showBackbone.yml** file to check the configuration on the Backbone Router.
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/54.png)
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/55.png)
+
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/56.png)
 
