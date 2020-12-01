@@ -130,6 +130,10 @@ To confirm that those playbooks were applied successfully to the targeted router
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/53.png)
 
+* **register** is being used in these files to save the response of the command **show running-config** into the "print_output** variable.
+
+* The **debug** mode is used to print the contents of **print_output**
+
 I ran the **showBackbone.yml** file to check the configuration on the Backbone Router.
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/54.png)
