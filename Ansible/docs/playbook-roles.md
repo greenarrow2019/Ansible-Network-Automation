@@ -13,7 +13,7 @@ The playbook is great because we can add multiple plays and tasks into one playb
 
 However, when we have a large system with a lot of devices at different departments, The approach "putting everything in one file" may create a problem because the playbook will be very long and complex.
 
-Ansible came up with a new approach which can solve this problem. Ansible lets users organize tasks in a directory structure called a **Role**. Breaking down a big playbook into multiple small files, and each file only has one purpose can help people work together easily. 
+Ansible came up with a new approach that can solve this problem. Ansible lets users organize tasks in a directory structure called a **Role**. Breaking down a big playbook into multiple small files, and each file only has one purpose can help people work together easily. 
 
 <a name = '2'></a>
 ## 2. Introduction
