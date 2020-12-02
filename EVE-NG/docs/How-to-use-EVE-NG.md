@@ -32,9 +32,9 @@ EVE-NG does not provide images of network devices on their website. Users need t
 
 - **Dynamips** is an emulator computer program that was written to emulate Cisco routers. It can emulate the hardware of the Cisco series routing platforms by directly booting an actual Cisco IOS software image into the emulator.
 
-- **IOL** or **IOS on Linux** is a Cisco internal way of running IOS on Linux. The IOL images are used to create layer 2 devices (switches) or layer 3 devices (routers) which can help people to practice with the same features and functions that the original devices has. It is not CPU and memory resource intensive which makes it a good choice.
+- **IOL** or **IOS on Linux** is a Cisco internal way of running IOS on Linux. The IOL images are used to create layer 2 devices (switches) or layer 3 devices (routers) which can help people to practice with the same features and functions that the original devices have. It is not CPU and memory resource intensive which makes it a good choice.
 
-- **qemu** is a an open-source emulator and virtualizer that can perform hardware virtualization. 
+- **qemu** is an open-source emulator and virtualizer that can perform hardware virtualization. 
 
 <a name = '3'></a>
 ## 3. **Directories for images storage**
@@ -49,7 +49,7 @@ EVE-NG does not provide images of network devices on their website. Users need t
 <a name = '4'></a>
 ## 4. Accessing EVE-NG
 
-I use PUTTY to ssh to the EVE-NG virtual machine for a bigger screen. when I log in for the first time, I run _apt-get update && apt-get upgrade_ to update the list of available packages and install the latest versions of all the packages the VM has.
+I used PUTTY to ssh to the EVE-NG virtual machine for a bigger screen. when I logged in for the first time, I ran _apt-get update && apt-get upgrade_ to update the list of available packages and install the latest versions of all the packages the VM has.
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/23.png)
 
@@ -58,7 +58,7 @@ I use PUTTY to ssh to the EVE-NG virtual machine for a bigger screen. when I log
 <a name = '4.1'></a>
 #### 1. Installing WinSCP
 
-I use WinSCP to copy file between my local computer and the EVE-NG virtual machine.
+I used WinSCP to copy file between my local computer and the EVE-NG virtual machine.
 Click [here](https://winscp.net/eng/index.php) to download WinSCP.
 After installing WinSCP, open a connection the EVE-NG virtual machine.
 
@@ -111,7 +111,7 @@ After installing WinSCP, open a connection the EVE-NG virtual machine.
 <a name = '4.3'></a>
 #### 3.Adding QEMU images
 
-**Note**: The naiming of the images in qemu is a bit different from iol. The rules are listed [here](https://www.eve-ng.net/index.php/documentation/qemu-image-namings/)
+**Note**: The naming of the images in qemu is a bit different from iol. The rules are listed [here](https://www.eve-ng.net/index.php/documentation/qemu-image-namings/)
 - Transferring the images for layer 2 switch and router to the correct folder.
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/36.png)
@@ -129,7 +129,7 @@ After installing WinSCP, open a connection the EVE-NG virtual machine.
 <a name = '4.4'></a>
 #### 4. Adding Linux image pack to EVE-NG VM
 
-EVE-NG lets users upload Linux images to the VM, and EVE-NG also provides ready to go and prepared Linux image pack on their [website](https://www.eve-ng.net/index.php/documentation/howtos/howto-create-own-linux-host-image/). For this project, I use the pre-install Linux images they provide.
+EVE-NG lets users upload Linux images to the VM, and EVE-NG also provides ready to go and prepared Linux image pack on their [website](https://www.eve-ng.net/index.php/documentation/howtos/howto-create-own-linux-host-image/). For this project, I used the pre-install Linux images they provide.
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/39.png)
 
@@ -141,7 +141,7 @@ Universal credentials in all the Linux images provided by EVE-NG:
 - user/Test123
 - root/Test123
 **Note**: If you want to create your own custom Linux host, remember to check the rules for naming.
-After that, go to the web interface to maje sure they are correctly installed and ready to use.
+After that, go to the web interface to make sure they are correctly installed and ready to use.
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/EVE-NG/images/41.png)
 
