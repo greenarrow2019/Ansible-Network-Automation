@@ -18,7 +18,7 @@ I built a network diagram and configured every node manually before using Ansibl
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/1.png)
 
-For every router and switch, I configured a hostname, a secret password, and a local account. Also, I set up the console port, the auxiliary port, and the VTY ports (Telnet and SSH) to use the local account's credential to log in. In addition, because all passwords configured on an IOS (Internetwork Operating System) device, with the exception of the passwords configured with **enable secret password**, are stored in clear-text in the device configuration file. To encrypt all the passwords, I used the command **service password-encryption* in global configuration mode.
+For every router and switch, I configured a hostname, a secret password, and a local account. Also, I set up the console port, the auxiliary port, and the VTY ports (Telnet and SSH) to use the local account's credential to log in. In addition, because all passwords configured on an IOS (Internetwork Operating System) device, with the exception of the passwords configured with **enable secret password**, are stored in clear-text in the device configuration file, I used the command **service password-encryption** in global configuration mode to encrypt all the passwords.
 
 Also, I shut down all the ports that I didn't use on the routers and switches. For every working port on each router, I gave it an IP address as shown in the network diagram. 
 Port e0 on Linux14 received an IP address automatically from the DHCP server in the subnet.
@@ -80,10 +80,10 @@ The DHCP server in VLAN 40 would provide IP addresses to the machines in VLAN 10
 
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/10.png)
 
-The spannning tree protocol mode in these switches was **Rapid Per-VLAN Spanning Tree Plus.** (RPST+)
+The spanning tree protocol mode in these switches was **Rapid Per-VLAN Spanning Tree Plus.** (RPST+)
 **Note**: I wanted to implement a two-tier LAN network to show how RPST+ worked in a network, but I wasn't able to get an EVE image for Switch Layer 3.
 
-On theses switches, for each edge port, I enabled **PortFast** and **BPDUguard**. 
+On these switches, for each edge port, I enabled **PortFast** and **BPDUguard**. 
 
 **PortFast** will cause a switch port to enter the spanning tree forwarding state immediately, bypassing the learning state. This feature helps client machines to receive IP addresses from a DHCP server immediately when they boot up and don't have to wait for the spanning tree protocol to finish converging. 
 
@@ -104,7 +104,7 @@ I also enabled **Port Address Translation** on this router with G0/0 as the **in
 ## Routing Protocols
 
 * OSPF area 0: BackboneRT, ManagementRT1, and ManagementRT2.
-    * On BackboneRT, I used the command **ip route 0.0.0.0 0.0.0.0 G0/2** to to route all traffic to the Internet and added it to the routing table by using the command **default-information originate**.  
+    * On BackboneRT, I used the command **ip route 0.0.0.0 0.0.0.0 G0/2** to route all traffic to the Internet and added it to the routing table by using the command **default-information originate**.  
     
 ![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Network%20Diagram/Images/12.png)
 
