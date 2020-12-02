@@ -33,4 +33,6 @@ A role doesn't require all seven directories to be present, but a role must have
 
 Also, each included directory must have a **main.yml** file in it because Ansible will look for that file in each available directory when it runs.
 
+**Reference**:
+[Roles](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html?fbclid=IwAR0-xDxlgcnqAToX7j9pwr1TXrFiFMnsc_ybBncArOSWXLiAZQevO_BCxeU#running-role-dependencies-multiple-times-in-one-playbook)
 
