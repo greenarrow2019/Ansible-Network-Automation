@@ -130,5 +130,4 @@ Checking back on the machine:
 
 There are a lot of useful modules that Ansible provides for automation tasks.
 
-To see a full list of modules, please check this link:
-https://docs.ansible.com/ansible/2.3/list_of_all_modules.html
+To see a full list of modules, please check this [link](https://docs.ansible.com/ansible/2.3/list_of_all_modules.html)
