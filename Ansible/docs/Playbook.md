@@ -11,7 +11,7 @@
 <a name = '1'></a>
 ## 1. Introduction
 
-Sometimes, when we want to execute a task or tasks with Ansible multiple times, we can write an ad-hoc command, but that command may be long and hard to remember.
+Sometimes, when we want to execute a task or many tasks with Ansible multiple times, we can write an ad-hoc command, but that command may be long and hard to remember.
 
 There is a better way which is to save the task(s) into a playbook and run the playbook when we want to execute the task(s). For example, when we add a new machine to the system, we can run the playbook to push out new configurations and confirm those new configurations instead of writing many ad-hoc commands. 
 
@@ -20,7 +20,7 @@ There is a better way which is to save the task(s) into a playbook and run the p
 
 A playbook is written in YAML language which is human-readable.
 
-**Note**: Indentation is an important part in YAML language.
+**Note**: Indentation is an important part of the YAML language.
 
 A playbook consists of one or more **plays** in an ordered list which means Ansible will execute each play at a time from top
 to bottom. each **play** contains one or more **tasks**, and each **task** calls an Ansible module. If a play has more than one task, 
