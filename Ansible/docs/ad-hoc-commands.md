@@ -25,14 +25,14 @@ ansible [pattern] -m [module] -a "[module options]"
 * module options: arguments
 
 <a name = '2'></a>
-## 2. Woorking with routers
+## 2. Working with routers
 
 Example:
 I will pull some information from the routers in the network.
 
 First, I create a host list for the management routers and the backbone router.
 
-![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/12.png)
+![](https://github.com/greenarrow2019/Ansible-Network-Automation/blob/master/Ansible/images/58.png)
 
 The interfaces on the managementRT list:
 
