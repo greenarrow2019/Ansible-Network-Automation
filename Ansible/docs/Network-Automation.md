@@ -31,6 +31,8 @@ For this project, I decided to set up the same username and password for managem
 
 **Connection variables**
 
+Even though Ansible is agentless, it requires the targeted machines to have Python installed. However, Cisco IOS platform doesn't have Python, and Ansible can use a connection plugin called **network_cli** to connect to Cisco routers to overcome that problem. 
+
 Connection variables are normally used to set the specifics on how to execute actions on a target.
 
 * ansible_connection: define the connection plugin.
